@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/selected_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </uk.co.senab.photoview.PhotoView>
+
+    <ProgressBar
+        android:id="@+id/selected_image_loading_bar"
+        style="?android:attr/progressBarStyleLargeInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:interpolator="@android:interpolator/linear"
+        android:indeterminateDrawable="@drawable/progress_medium"
+        android:indeterminateDuration="1200"
+        android:visibility="gone" />
+
+</RelativeLayout>

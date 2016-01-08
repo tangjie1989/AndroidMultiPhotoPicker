@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:background="@drawable/common_listview_item_selector">
+
+    <ImageView
+        android:id="@+id/image_group_first_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/image_group_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/image_group_first_img"
+        android:text="最近照片 (45)"
+        android:textColor="@color/photo_picker_common_paging_color_black" 
+        android:textSize="@dimen/textview_middle_size"/>
+
+    <ImageView
+        android:layout_width="14dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/right_arrow" />
+
+</RelativeLayout>
