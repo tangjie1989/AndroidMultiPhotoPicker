@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:interpolator="@android:interpolator/linear"
-        android:indeterminateDrawable="@drawable/progress_medium"
+        android:indeterminateDrawable="@drawable/photo_picker_progress_medium"
         android:indeterminateDuration="1200"
         android:visibility="gone" />
 

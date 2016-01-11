@@ -263,7 +263,7 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 		
 		final Dialog selectDialog = new Dialog(PhotoPickerEntryActivity.this);
 		selectDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		selectDialog.setContentView(R.layout.showorder_select_dialog);
+		selectDialog.setContentView(R.layout.photo_picker_select_dialog);
 		
 		//相册
 		View fromLib = selectDialog.findViewById(R.id.from_library);

@@ -38,7 +38,7 @@ public class TopBarBaseActivity extends Activity {
 	private void initTopBar() {
 		
 		backBtn = (ImageButton)findViewById(R.id.imageView_left);
-		backBtn.setImageResource(R.drawable.back_default);
+		backBtn.setImageResource(R.drawable.photo_picker_back_default);
 		
 		backBtn.setOnClickListener(new OnClickListener() {
 			@Override

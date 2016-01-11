@@ -8,7 +8,7 @@
         android:id="@+id/imageView_left"
         android:layout_width="@dimen/activity_top_bar_height"
         android:layout_height="@dimen/activity_top_bar_height"
-        android:background="@drawable/back_button_default_style"
+        android:background="@drawable/photo_picker_back_button_default_style"
         android:padding="12dp"
         android:scaleType="centerInside" />
 
@@ -27,7 +27,7 @@
         android:layout_width="@dimen/activity_top_bar_height"
         android:layout_height="@dimen/activity_top_bar_height"
         android:layout_alignParentRight="true"
-        android:background="@drawable/back_button_default_style"
+        android:background="@drawable/photo_picker_back_button_default_style"
         android:padding="12dp"
         android:scaleType="centerInside" />
 
