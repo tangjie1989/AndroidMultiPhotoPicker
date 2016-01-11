@@ -7,32 +7,14 @@
         android:id="@+id/top_bar"
         layout="@layout/common_top_bar" />
 
-    <EditText
-        android:layout_below="@id/top_bar"
-        android:id="@+id/entry_input_box"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/entry_edit_text_height"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/text_field"
-        android:gravity="top|left"
-        android:hint="@string/showorder_albunm_edittext_hint"
-        android:maxLength="150"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="@dimen/textview_middle_size" />
-
     <LinearLayout
         android:id="@+id/entry_img_picker_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/entry_edit_text_height"
-        android:layout_below="@id/entry_input_box"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/text_field"
+        android:layout_height="130dp"
+        android:layout_below="@id/top_bar"
+        android:layout_margin="10dp"
+        android:background="@drawable/photo_picker_add_img_bg"
         android:orientation="horizontal"
-        android:padding="@dimen/entry_picker_img_padding"></LinearLayout>
+        android:padding="@dimen/entry_picker_img_padding" />
 
 </RelativeLayout>

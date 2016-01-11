@@ -2,7 +2,7 @@
     android:id="@+id/top_bar_container"
     android:layout_width="match_parent"
     android:layout_height="@dimen/activity_top_bar_height"
-    android:background="@color/white" >
+    android:background="@color/photo_picker_color_white" >
 
     <ImageButton
         android:id="@+id/imageView_left"
@@ -19,8 +19,8 @@
         android:layout_centerInParent="true"
         android:ellipsize="marquee"
         android:singleLine="true"
-        android:textColor="@color/app_main_theme_color"
-        android:textSize="@dimen/textview_big_size" />
+        android:textColor="@color/photo_picker_main_color"
+        android:textSize="@dimen/photo_picker_textview_big_size" />
 
     <ImageButton
         android:id="@+id/imageView_right"
@@ -35,6 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/global_line_main_color" />
+        android:background="@color/photo_picker_line_color" />
 
 </RelativeLayout>

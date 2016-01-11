@@ -77,7 +77,7 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 	
 	@Override
 	protected String getViewTitle() {
-		return getString(R.string.showorder_albunm_title);
+		return getString(R.string.photo_picker_albunm_title);
 	}
 	
 	private void initImgPickerContainer(){
@@ -96,12 +96,12 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 			imgPickerContainer.setLayoutParams(pickerContainerLp);
 		}else{
 			pickerContainerLp = new RelativeLayout.LayoutParams(screenWidth,imgPickerContainerHeight);
-			pickerContainerLp.addRule(RelativeLayout.BELOW, R.id.entry_input_box);
+			pickerContainerLp.addRule(RelativeLayout.BELOW, R.id.top_bar);
 			pickerContainerLp.topMargin = pickerImgPadding;
 			imgPickerContainer.setLayoutParams(pickerContainerLp);
 		}
 		
-		imgPickerContainer.setBackgroundResource(R.drawable.text_field);
+		imgPickerContainer.setBackgroundResource(R.drawable.photo_picker_add_img_bg);
 		
 		updateImgPickerContainer();
 	}

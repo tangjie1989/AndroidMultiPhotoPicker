@@ -19,8 +19,8 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/image_group_first_img"
         android:text="最近照片 (45)"
-        android:textColor="@color/photo_picker_common_paging_color_black" 
-        android:textSize="@dimen/textview_middle_size"/>
+        android:textColor="@color/photo_picker_color_black"
+        android:textSize="@dimen/photo_picker_textview_middle_size"/>
 
     <ImageView
         android:layout_width="14dp"

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="48dp"
     android:layout_alignParentTop="true"
-    android:background="@color/white"
+    android:background="@color/photo_picker_color_white"
     android:gravity="center_vertical">
 
     <RelativeLayout
@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="预览"
-        android:textColor="@color/app_main_theme_color"
-        android:textSize="@dimen/textview_middle_size" />
+        android:textColor="@color/photo_picker_main_color"
+        android:textSize="@dimen/photo_picker_textview_middle_size" />
 
     <CheckBox
         android:id="@+id/scan_selected_image_thumbnial_operation"
@@ -55,6 +55,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/global_line_main_color" />
+        android:background="@color/photo_picker_line_color" />
 
 </RelativeLayout>

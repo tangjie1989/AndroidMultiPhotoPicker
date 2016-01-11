@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@color/photo_picker_color_white"
     android:orientation="vertical">
 
     <TextView 
 		android:id="@+id/take_photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/showorder_select_dialog_take_photo"
-        android:textColor="@color/black"
-        android:textSize="@dimen/textview_big_size"
+        android:text="@string/photo_picker_select_dialog_take_photo"
+        android:textColor="@color/photo_picker_color_black"
+        android:textSize="@dimen/photo_picker_textview_big_size"
         android:padding="15dp"/>
     
     <View 
@@ -19,15 +19,15 @@
         android:layout_height="1px"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:background="@color/global_line_main_color"/>
+        android:background="@color/photo_picker_line_color"/>
     
     <TextView 
 		android:id="@+id/from_library"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/showorder_select_dialog_from_library"
-        android:textColor="@color/black"
-        android:textSize="@dimen/textview_big_size"
+        android:text="@string/photo_picker_select_dialog_photo_album"
+        android:textColor="@color/photo_picker_color_black"
+        android:textSize="@dimen/photo_picker_textview_big_size"
         android:padding="15dp"/>
     
     

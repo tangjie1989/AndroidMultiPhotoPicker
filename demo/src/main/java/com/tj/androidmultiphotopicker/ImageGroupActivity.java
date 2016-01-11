@@ -92,7 +92,7 @@ public class ImageGroupActivity extends TopBarBaseActivity implements
 	
 	@Override
 	protected String getViewTitle() {
-		return getString(R.string.showorder_albunm_selectpic_title);
+		return getString(R.string.photo_picker_albunm_selectpic_title);
 	}
 	
 	private void overrideTopBarBackClick(){

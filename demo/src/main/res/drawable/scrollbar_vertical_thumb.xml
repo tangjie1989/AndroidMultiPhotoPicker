@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:angle="0"
-        android:endColor="@color/greyer_middle_transparent"
-        android:startColor="@color/greyer_middle_transparent" />
+        android:endColor="@color/photo_picker_color_grey_middle_transparent"
+        android:startColor="@color/photo_picker_color_grey_middle_transparent" />
     <corners android:radius="0dp" />
 
     <size

@@ -31,16 +31,16 @@
 
         <activity
             android:name="com.tj.androidmultiphotopicker.ImageGroupActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.tj.androidmultiphotopicker.ImageListActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.tj.androidmultiphotopicker.SelectedImageListActivitiy"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.tj.androidmultiphotopicker.SelectedImageListConfirmActivitiy"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
 
 
     </application>
