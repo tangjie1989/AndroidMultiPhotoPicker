@@ -28,8 +28,8 @@ import com.tj.library.imgdisplayconfig.PhotoPickerImageDisplayConfig;
 import com.tj.library.model.ImageThumbnails;
 import com.tj.library.model.ScreenSizeInfo;
 import com.tj.library.model.StartPhotoPickerNeedParams;
-import com.tj.library.thumbnailsloader.ImageThumbnailsBuilder2;
-import com.tj.library.utils.FileInfo;
+import com.tj.library.thumbnailsloader.ImageThumbnailsBuilderWithSingleThread;
+import com.tj.library.utils.FileInfoUtil;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -340,9 +340,9 @@ public class ImageListActivity extends Activity implements OnItemClickListener {
 
   		final ImageView imageView = (ImageView)cell.getChildAt(0);
   		
-  		ImageThumbnailsBuilder2.getInstance().geneateImageSmallThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
+  		ImageThumbnailsBuilderWithSingleThread.getInstance().geneateImageSmallThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
 		
-		if(FileInfo.isFileExit(imgThumbnails.getSmallImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getSmallImgPath())){
 			ImageLoader.getInstance().displayImage("file://" + imgThumbnails.getSmallImgPath(), imageView, PhotoPickerImageDisplayConfig.generateDisplayImageOptionsNoCatchDisk());
 		}else{
 			ImageLoader.getInstance().displayImage("file://" + imgThumbnails.getSourceImgPath(), imageView, PhotoPickerImageDisplayConfig.generateDisplayImageOptionsNoCatch());
@@ -364,7 +364,7 @@ public class ImageListActivity extends Activity implements OnItemClickListener {
   				
   				hideOrShowImageCoverView(imgThumbnails, coverImgView);
   				
-  				ImageThumbnailsBuilder2.getInstance().geneateImageBigThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
+  				ImageThumbnailsBuilderWithSingleThread.getInstance().geneateImageBigThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
   				
   			}
   		});

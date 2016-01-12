@@ -23,9 +23,9 @@ import com.tj.library.imgdisplayconfig.PhotoPickerImageDisplayConfig;
 import com.tj.library.model.ImageThumbnails;
 import com.tj.library.model.ScreenSizeInfo;
 import com.tj.library.model.StartPhotoPickerNeedParams;
-import com.tj.library.thumbnailsloader.ImageThumbnailsBuilder2;
+import com.tj.library.thumbnailsloader.ImageThumbnailsBuilderWithSingleThread;
 import com.tj.library.utils.DeviceInfoUtil;
-import com.tj.library.utils.FileInfo;
+import com.tj.library.utils.FileInfoUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -133,7 +133,7 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 			public void onClick(View v) {
 
 				ImageThumbnails imgThumbnails = selectedImgList.get(index);
-				ImageThumbnailsBuilder2.getInstance().geneateImageSmallThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
+				ImageThumbnailsBuilderWithSingleThread.getInstance().geneateImageSmallThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
 
 				Intent entryIntent = new Intent();
 				entryIntent.setClass(getApplicationContext(), SelectedImageListConfirmActivitiy.class);
@@ -145,7 +145,7 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 		
 		ImageThumbnails imgThumbnails = selectedImgList.get(index);
 		
-		if(FileInfo.isFileExit(imgThumbnails.getSmallImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getSmallImgPath())){
 			ImageLoader.getInstance().displayImage("file://" + imgThumbnails.getSmallImgPath(), pickerImgView, pickerImgDisplayOption);
 		}else{
 			ImageLoader.getInstance().displayImage("file://" + imgThumbnails.getSourceImgPath(), pickerImgView, pickerImgDisplayNoCatchOption);
@@ -246,8 +246,8 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 						imgThumbnails.setSelected(true);
 						selectedImgList.add(imgThumbnails);
 						
-						if(!FileInfo.isFileExit(imgThumbnails.getBigImgPath())){
-							ImageThumbnailsBuilder2.getInstance().geneateImageBigThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
+						if(!FileInfoUtil.isFileExit(imgThumbnails.getBigImgPath())){
+							ImageThumbnailsBuilderWithSingleThread.getInstance().geneateImageBigThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
 						}
 						
 		        		updateImgPickerContainer();

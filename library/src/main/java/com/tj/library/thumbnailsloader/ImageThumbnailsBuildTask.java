@@ -1,7 +1,7 @@
 package com.tj.library.thumbnailsloader;
 
-import com.tj.library.model.ScreenSizeInfo;
 import com.tj.library.model.ImageThumbnails;
+import com.tj.library.model.ScreenSizeInfo;
 import com.tj.library.utils.GenerateImageThumbnailsFileUtil;
 
 public class ImageThumbnailsBuildTask implements Runnable{

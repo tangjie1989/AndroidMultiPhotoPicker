@@ -1,5 +1,11 @@
 package com.tj.library.thumbnailsloader;
 
+import android.content.Context;
+
+import com.tj.library.model.ImageThumbnails;
+import com.tj.library.model.ScreenSizeInfo;
+import com.tj.library.utils.FileInfoUtil;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,40 +14,34 @@ import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import android.content.Context;
-
-import com.tj.library.model.ImageThumbnails;
-import com.tj.library.model.ScreenSizeInfo;
-import com.tj.library.utils.FileInfo;
-
-public class ImageThumbnailsBuilder2{
+public class ImageThumbnailsBuilderWithSingleThread {
 	
 	private static ExecutorService threadPool;// 线程池
 	
-	private volatile static ImageThumbnailsBuilder2 instance;
+	private volatile static ImageThumbnailsBuilderWithSingleThread instance;
 	
 	private final Map<Context, List<ImageThumbnailsBuildTaskHandle>> requestMap;
 	
-	public static ImageThumbnailsBuilder2 getInstance() {
+	public static ImageThumbnailsBuilderWithSingleThread getInstance() {
 		if(instance == null){
-			synchronized (ImageThumbnailsBuilder2.class) {
+			synchronized (ImageThumbnailsBuilderWithSingleThread.class) {
 				if (instance == null) {
-					instance = new ImageThumbnailsBuilder2();
+					instance = new ImageThumbnailsBuilderWithSingleThread();
 				}
 			}
 		}
 		return instance;
 	}
 	
-	private ImageThumbnailsBuilder2() {
+	private ImageThumbnailsBuilderWithSingleThread() {
 		
-		requestMap = new WeakHashMap<Context, List<ImageThumbnailsBuildTaskHandle>>();
+		requestMap = new WeakHashMap<>();
 		threadPool = Executors.newSingleThreadExecutor();
 	}
 	
 	public void geneateImageSmallThumbnailsFile(ImageThumbnails imgThumbnails, ScreenSizeInfo screenSizeInfo, Context context){
 		
-		if(FileInfo.isFileExit(imgThumbnails.getSmallImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getSmallImgPath())){
 			return;
 		}
 		
@@ -52,7 +52,7 @@ public class ImageThumbnailsBuilder2{
 	}
 	
 	public void geneateImageBigThumbnailsFile(ImageThumbnails imgThumbnails, ScreenSizeInfo screenSizeInfo, Context context){
-		if(FileInfo.isFileExit(imgThumbnails.getBigImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getBigImgPath())){
 			return;
 		}
 		
@@ -71,7 +71,7 @@ public class ImageThumbnailsBuilder2{
             // Add request to request map
             List<ImageThumbnailsBuildTaskHandle> requestList = requestMap.get(context);
             if (requestList == null) {
-                requestList = new LinkedList<ImageThumbnailsBuildTaskHandle>();
+                requestList = new LinkedList<>();
                 requestMap.put(context, requestList);
             }
 

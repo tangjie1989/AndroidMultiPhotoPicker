@@ -1,10 +1,5 @@
 package com.tj.library.utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 
@@ -13,6 +8,11 @@ import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.tj.library.imgdisplayconfig.PhotoPickerImageDisplayConfig;
 import com.tj.library.model.ImageThumbnails;
 import com.tj.library.model.ScreenSizeInfo;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class GenerateImageThumbnailsFileUtil {
 
@@ -40,7 +40,7 @@ public class GenerateImageThumbnailsFileUtil {
 	 */
 	public void generateDevicePhotoBigThumbnailsToLocalSDCard(){
 		
-		if(FileInfo.isFileExit(imgThumbnails.getBigImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getBigImgPath())){
 			return;
 		}
 		
@@ -52,7 +52,7 @@ public class GenerateImageThumbnailsFileUtil {
 	 */
 	public void generateDevicePhotoSmallThumbnailsToLocalSDCard(){
 		
-		if(FileInfo.isFileExit(imgThumbnails.getSmallImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getSmallImgPath())){
 			return;
 		}
 		
@@ -117,7 +117,6 @@ public class GenerateImageThumbnailsFileUtil {
 				
 				if(isSourceBitmapRecycle && sourceBitmap != null && !sourceBitmap.isRecycled()){
 					sourceBitmap.recycle();
-					sourceBitmap = null;
 				}
 			} catch (IOException e2) {
 			}

@@ -24,8 +24,8 @@ import com.tj.library.model.ImageGroup;
 import com.tj.library.model.ImageThumbnails;
 import com.tj.library.model.ScreenSizeInfo;
 import com.tj.library.model.StartPhotoPickerNeedParams;
-import com.tj.library.thumbnailsloader.ImageThumbnailsBuilder2;
-import com.tj.library.utils.FileInfo;
+import com.tj.library.thumbnailsloader.ImageThumbnailsBuilderWithSingleThread;
+import com.tj.library.utils.FileInfoUtil;
 import com.tj.library.utils.TaskUtil;
 
 import java.util.ArrayList;
@@ -217,9 +217,9 @@ public class ImageGroupActivity extends TopBarBaseActivity implements
 			
 			ImageThumbnails imgThumbnails = imgGroup.getImages().get(0);
 			
-			ImageThumbnailsBuilder2.getInstance().geneateImageSmallThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
+			ImageThumbnailsBuilderWithSingleThread.getInstance().geneateImageSmallThumbnailsFile(imgThumbnails, screenSizeInfo, getApplicationContext());
 			
-			if(FileInfo.isFileExit(imgThumbnails.getSmallImgPath())){
+			if(FileInfoUtil.isFileExit(imgThumbnails.getSmallImgPath())){
 				ImageLoader.getInstance().displayImage("file://" + imgThumbnails.getSmallImgPath(), groupImg, PhotoPickerImageDisplayConfig.generateDisplayImageOptionsNoCatchDisk());
 			}else{
 				ImageLoader.getInstance().displayImage("file://" + imgGroup.getFirstImgPath(), groupImg, PhotoPickerImageDisplayConfig.generateDisplayImageOptionsNoCatch());

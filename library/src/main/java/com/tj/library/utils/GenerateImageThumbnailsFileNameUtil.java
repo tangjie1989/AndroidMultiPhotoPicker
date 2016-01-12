@@ -27,7 +27,7 @@ public class GenerateImageThumbnailsFileNameUtil {
 	}
 	
 	private static String generateImageThumbnailsFileName(String sourceName, String format){
-		return Md5Encode.getMD5(sourceName) + format;
+		return FileInfoUtil.getMD5(sourceName) + format;
 	}
 
 }

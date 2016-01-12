@@ -1,5 +1,11 @@
 package com.tj.library.thumbnailsloader;
 
+import android.content.Context;
+
+import com.tj.library.model.ImageThumbnails;
+import com.tj.library.model.ScreenSizeInfo;
+import com.tj.library.utils.FileInfoUtil;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,30 +16,25 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import android.content.Context;
-
-import com.tj.library.model.ImageThumbnails;
-import com.tj.library.model.ScreenSizeInfo;
-import com.tj.library.utils.FileInfo;
-
-public class ImageThumbnailsBuilder{
+@Deprecated
+public class ImageThumbnailsBuilderWithMultiThread {
 	
 	private static ExecutorService threadPool;// 线程池
 	
-	private static ImageThumbnailsBuilder instance;
+	private static ImageThumbnailsBuilderWithMultiThread instance;
 	
 	private final Map<Context, List<ImageThumbnailsBuildTaskHandle>> requestMap;
 	
-	public static ImageThumbnailsBuilder getInstance() {
+	public static ImageThumbnailsBuilderWithMultiThread getInstance() {
 		if (instance == null) {
-			instance = new ImageThumbnailsBuilder();
+			instance = new ImageThumbnailsBuilderWithMultiThread();
 		}
 		return instance;
 	}
 	
-	private ImageThumbnailsBuilder() {
+	private ImageThumbnailsBuilderWithMultiThread() {
 		
-		requestMap = new WeakHashMap<Context, List<ImageThumbnailsBuildTaskHandle>>();
+		requestMap = new WeakHashMap<>();
 //		threadPool = Executors.newFixedThreadPool(3, createThreadFactory(Thread.NORM_PRIORITY, "uil-pool-d-"));
 //		threadPool = Executors.newCachedThreadPool(createThreadFactory(Thread.MIN_PRIORITY, "uil-pool-d-"));
 		threadPool = Executors.newCachedThreadPool();
@@ -41,7 +42,7 @@ public class ImageThumbnailsBuilder{
 	
 	public void geneateImageSmallThumbnailsFile(ImageThumbnails imgThumbnails, ScreenSizeInfo screenSizeInfo, Context context){
 		
-		if(FileInfo.isFileExit(imgThumbnails.getSmallImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getSmallImgPath())){
 			return;
 		}
 		
@@ -52,7 +53,7 @@ public class ImageThumbnailsBuilder{
 	}
 	
 	public void geneateImageBigThumbnailsFile(ImageThumbnails imgThumbnails, ScreenSizeInfo screenSizeInfo, Context context){
-		if(FileInfo.isFileExit(imgThumbnails.getBigImgPath())){
+		if(FileInfoUtil.isFileExit(imgThumbnails.getBigImgPath())){
 			return;
 		}
 		
