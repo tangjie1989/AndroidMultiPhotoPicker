@@ -46,7 +46,7 @@ public class ImageGroupActivity extends TopBarBaseActivity implements
     private ImageGroupAdapter imgGroupAdapter;
     
     private static final int LIST_ACTIVITY_REQUEST = 10000;
-    private ArrayList<ImageGroup> imgGroupList = new ArrayList<ImageGroup>();
+    private ArrayList<ImageGroup> imgGroupList = new ArrayList<>();
     private ArrayList<ImageThumbnails> selectedImgList;
     
     private LayoutInflater inflater;
@@ -66,7 +66,7 @@ public class ImageGroupActivity extends TopBarBaseActivity implements
 			startPhotoPickerNeedParams = startPickerIntent.getParcelableExtra(ImageListActivity.START_PHOTO_PICKER_NEED_PARAMS);
 			selectedImgList = startPickerIntent.getParcelableArrayListExtra(ImageListActivity.EXTRA_SELECTED_IMAGES_DATAS);
 			if(selectedImgList == null){
-				selectedImgList = new ArrayList<ImageThumbnails>();
+				selectedImgList = new ArrayList<>();
 			}
 		}else{
 			finish();

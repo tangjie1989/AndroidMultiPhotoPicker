@@ -111,15 +111,15 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 		imgPickerContainer.removeAllViews();
 		
 		int pickedCount = selectedImgList.size();
-		if(pickedCount > 3){
-			pickedCount = 3;
+		if(pickedCount > lineImgCount){
+			pickedCount = lineImgCount;
 		}
 		
 		for (int i = 0; i < pickedCount; i++) {
 			imgPickerContainer.addView(createPickerImageView(i));
 		}
 		
-		if(pickedCount < 3){
+		if(pickedCount < lineImgCount){
 			imgPickerContainer.addView(createAddIndicatorImageView(pickedCount));
 		}
 	}
@@ -234,7 +234,7 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 		
 		if(resultCode == Activity.RESULT_OK){
 			
-			if(requestCode == START_CHOOSE_IMG_FROM_CAMERA){ //拍照返回
+			if(requestCode == START_CHOOSE_IMG_FROM_CAMERA){
 				
 				if(startPhotoPickerNeedParams != null){
 					
@@ -253,7 +253,7 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 		        		updateImgPickerContainer();
 					}
 				}else{
-					Toast.makeText(getApplicationContext(), "图片获取失败,请重试!", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), R.string.photo_picker_take_photo_from_camera_failure, Toast.LENGTH_SHORT).show();
 				}
 			}
 		}
@@ -265,7 +265,6 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 		selectDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		selectDialog.setContentView(R.layout.photo_picker_select_dialog);
 		
-		//相册
 		View fromLib = selectDialog.findViewById(R.id.from_library);
 		fromLib.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -275,7 +274,6 @@ public class PhotoPickerEntryActivity extends TopBarBaseActivity {
 			}
 		});
 		
-		//拍照
 		View takePhoto = selectDialog.findViewById(R.id.take_photo);
 		takePhoto.setOnClickListener(new View.OnClickListener() {
 			@Override

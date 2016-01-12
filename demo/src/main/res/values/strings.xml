@@ -7,4 +7,6 @@
     <string name="photo_picker_albunm_title">选择</string>
     <string name="photo_picker_albunm_selectpic_title">选取照片</string>
 
+    <string name="photo_picker_take_photo_from_camera_failure">图片获取失败,请重试!</string>
+
 </resources>
